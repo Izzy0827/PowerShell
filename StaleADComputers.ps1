@@ -7,6 +7,4 @@ $DaysInactive = #<Insert Num of Days>
 $time = (Get-Date).Adddays(-($DaysInactive))
 
 #get all the stale pcs & display in alpha order
-$pc = Get-ADComputer -Filter {LastLogonTimeStamp -lt $time -And enabled -eq $true} -Properties Ipv4Address, OperatingSystem, LastLogonDate | Select-Object DNSHostName, Ipv4Address, OperatingSystem, LastLogonDate | Sort-Object DNSHostName
-
-$pc
+Get-ADComputer -Filter {LastLogonTimeStamp -lt $time -And enabled -eq $true} -Properties Ipv4Address, OperatingSystem, LastLogonDate | Select-Object DNSHostName, Ipv4Address, OperatingSystem, LastLogonDate | Sort-Object -Property LastLogonDate
