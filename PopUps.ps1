@@ -1,6 +1,6 @@
 ##(:<for Educational porpuses only>:)##
 
-Add-Type -AssemblyName System.Windows.Forms #allos us to create a GUI on windows
+Add-Type -AssemblyName System.Windows.Forms #allows us to create a GUI on windows
 
 $Screens = @() ##array to hold win form objects
 $num = 10 ##num of pop-ups 
@@ -53,6 +53,7 @@ foreach($Screen in $Screens)
 {
     $Screen.Close()
 }
+
 
 
 
